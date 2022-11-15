@@ -1,0 +1,69 @@
+<% include('../layouts/header.ejs') %>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+      
+</head>
+
+<h3>Products Details</h3>
+ <form action="/search" method="get">
+    <input type="search" name="id" placeholder="Product ID">&nbsp;
+    <input type="search" name="cid" placeholder="Category ID">&nbsp;
+    <input type="search" name="sub_cid" placeholder="Sub_Category ID">&nbsp;
+    <input type="submit" name="Check" value="check" class="btn btn-info" >
+ </form>
+<table class="table">
+  
+        <tr>
+            <th>product id</th>
+            <th>product</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>discount</th>
+            <th>description</th>
+            <th>cid</th>
+            <th>sub_cid</th>
+        </tr>
+   
+
+        <% if(product.length>0){ %>
+
+            <% for(var i=0; i<product.length; i++){ %>
+
+                <tr>
+                    <td>
+                        <%- product[i].id %>
+                    </td>
+                    <td>
+                        <%- product[i].pname %>
+                    </td>
+                    <td>
+                        <%- product[i].pprice %>
+                    </td>
+                    <td>
+                        <%- product[i].pquantity %>
+                    </td>
+                    <td>
+                        <%- product[i].pdiscount %>
+                    </td>
+                    <td>
+                        <%- product[i].pdescription %>
+                    </td>
+                    <td>
+                        <%- product[i].cid %>
+                    </td>
+                    <td>
+                        <%- product[i].sub_cid %>
+                    </td>
+                </tr>
+                <% } %>
+                <% } else{ %>
+                    <tr>
+                        <td>Data Not Found</td>
+                    </tr>
+                    <% } %>
+</table>
+
+
+
+<% include('../layouts/footer.ejs') %>

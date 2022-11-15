@@ -1,0 +1,14 @@
+<% include('../layouts/header.ejs') %>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<h2>Login Form</h2>
+<form action="/login" method="post">
+    <input type="email" name="uemail" placeholder="Enter Email" required><br><br>
+    <input type="password" name="upassword" placeholder="Enter Password" required><br><br>
+    <input type="submit" value="Login" class="btn btn-success">
+
+</form>
+
+<% include('../layouts/footer.ejs') %>

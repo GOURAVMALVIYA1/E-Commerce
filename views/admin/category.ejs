@@ -1,0 +1,43 @@
+<% include('../layouts/header.ejs') %>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<h3>category</h3>
+
+ <form action="/category" method="post">
+    <label>Category:</label><select name="cat_name">
+        <option value="Electronics">Electronics</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Home_appliances">Home_appliances</option>
+        <option value="Grocery">Grocery</option>
+    </select><br><br>
+
+    <label>Sub_Category:</label><select name="sub_name">
+        <option value="Mobile">Mobile</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Smartwatch">Smartwatch</option>
+        <option value="Clothes">Clothes</option>
+        <option value="Shoes">Shoes</option>
+        <option value="kids">kids</option>
+        <option value="Television">Television</option>
+        <option value="Washingmachine">Washingmachine</option>
+        <option value="Aircooler">Aircooler</option>
+        <option value="Beverages">Beverages</option>
+        <option value="Dairy">Dairy</option>
+        <option value="Staples">Staples</option>
+    </select><br><br>
+  <h3>products</h3>
+    <input type="text" name="pname" placeholder="product name" required> &nbsp;
+    <input type="number" name="pprice" placeholder="price" required> &nbsp;
+    <input type="number" name="pquantity" placeholder="quantity" required> &nbsp;
+    <input type="number" name="pdiscount" placeholder="discount" required> &nbsp;
+    <input type="text" name="pdescription" placeholder="description" required>&nbsp;
+    <input type="submit"  value="submit" class="btn btn-success" >
+
+</form>
+
+
+
+<% include('../layouts/footer.ejs') %>

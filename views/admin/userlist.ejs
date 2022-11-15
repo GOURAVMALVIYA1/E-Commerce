@@ -1,0 +1,44 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<% include('../layouts/header.ejs') %>
+    <h2>User List</h2>
+
+    <table class="table">
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Actions</th>
+            </tr>
+         <% if(userlist.length> 0){ %>
+
+            <% for(var i=0; i<userlist.length; i++){ %>
+
+                <tr>
+                    <td>
+                        <%- userlist[i].id %>
+                    </td>
+                    <td>
+                        <%- userlist[i].uname %>
+                    </td>
+                    <td>
+                        <%- userlist[i].uemail %>
+                    </td>
+                    <td>
+                        <%- userlist[i].umobile %>
+                    </td>
+                    <td><a href="/delete?id=<%- userlist[i].id %>"><button class="btn btn-danger">Delete</button></a>
+                    <a href="/update?id=<%- userlist[i].id %>"><button class="btn btn-success">Update</button></a></td>
+                </tr>
+
+                <% } %>
+
+                    <% }else { %>
+                        <h3>Data Not Found</h3>
+                        <% } %>
+    </table>
+
+    <% include('../layouts/footer.ejs') %>
